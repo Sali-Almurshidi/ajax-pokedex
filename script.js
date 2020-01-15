@@ -9,7 +9,6 @@ function getArray(userInput){
             getInformation(myJson);
         });
 }
-
 // get information from  getArray function
 function getInformation (infoArray){
     let pokemonArray = infoArray;
@@ -21,9 +20,9 @@ function getInformation (infoArray){
     let movesArray = [];
     // let to get the img just the front default
     let imgSprite = pokemonArray.sprites.front_default ;
-    //for loop to get 4 moves random from the moves array
+    //for loop to get 4 moves name random from the moves array
     for(i=0 ; i<4 ; i++){
-        movesArray[i] = Math.floor(Math.random()*pokemonArray.moves.length);
+        movesArray[i] = pokemonArray.moves[Math.floor(Math.random()*pokemonArray.moves.length)].move.name;
     }
     // to send the data to printInfo
     printInfo(inputID,inputName,imgSprite,movesArray);
