@@ -27,12 +27,15 @@ function getInformation (infoArray){
     // to send the data to printInfo
     printInfo(inputID,inputName,imgSprite,movesArray);
 }
-
+// function to print the data on the screen
 function printInfo(inputID,inputName,imgSprite,movesArray){
-
+    document.getElementById("pokemonId").innerHTML = inputID;
+    document.getElementById("pokemonImage").innerHTML = imgSprite;
+    document.getElementById("pokemonMoves").innerHTML = movesArray;
 }
 //addEventListener to the button to get the value from the user
 document.getElementById("callApi").addEventListener("click" , function () {
     let userInput = document.getElementById("PokemonName").value;
     getArray(userInput);
 });
+
