@@ -24,12 +24,19 @@ function getInformation (infoArray){
     //for loop to get 4 moves random from the moves array
     for(i=0 ; i<4 ; i++){
         movesArray[i] = Math.floor(Math.random()*pokemonArray.moves.length);
+
+         
+
     }
     // to send the data to printInfo
     printInfo(inputID,inputName,imgSprite,movesArray);
 }
 
 function printInfo(inputID,inputName,imgSprite,movesArray){
+    document.getElementById("pokemonId").innerHTML = inputID;
+    document.getElementById("pokemonImage").innerHTML = imgSprite;
+    document.getElementById("pokemonMoves").innerHTML = movesArray;
+
 
 }
 //addEventListener to the button to get the value from the user
@@ -37,3 +44,4 @@ document.getElementById("callApi").addEventListener("click" , function () {
     let userInput = document.getElementById("PokemonName").value;
     getArray(userInput);
 });
+
