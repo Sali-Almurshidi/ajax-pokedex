@@ -9,13 +9,11 @@ function getArray(userInput) {
         })
         .then((myJson) => {
             getInformation(myJson);
-            console.log(myJson);
         });
 }
 
 // get information from  getArray function
-function getInformation(infoArray) {
-    let pokemonArray = infoArray;
+function getInformation(pokemonArray) {
     // let to get the pokemon id
     let inputID = pokemonArray.id;
     // let to get the pokemon name
@@ -119,6 +117,7 @@ function sendURL(speciesURL) {
 //addEventListener to the button to get the value from the user
 document.getElementById("callApi").addEventListener("click", function () {
     let userInput = document.getElementById("PokemonName").value;
+    // call getArray function
     getArray(userInput);
 });
 
