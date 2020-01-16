@@ -50,6 +50,8 @@ body {
     border-radius: 50%;
     padding: 5px;
     width: 150px;
+    border: 2px solid #f44336;
+    box-shadow: 0 0 10px 10px #f44336;
 
 }
 
