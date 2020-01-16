@@ -45,14 +45,14 @@ function printInfo(inputID, inputName, imgSprite, movesArray, countID) {
     let pokemonID = document.createElement("h2");
     let idID = "h2ID" + countID;
     pokemonID.setAttribute("id", idID);
-    pokemonID.innerHTML = "Pokemon ID " + inputID;
+    pokemonID.innerHTML = "ID# " + inputID;
     elementsDiv.appendChild(pokemonID);
 
     // creat h2 for the name
     let pokemonName = document.createElement("h2");
     let idName = "h2Name" + countID;
     pokemonName.setAttribute("id", idName);
-    pokemonName.innerHTML = "Pokemon Name " + inputName;
+    pokemonName.innerHTML = inputName;
     elementsDiv.appendChild(pokemonName);
 
     // creat img element
@@ -67,7 +67,7 @@ function printInfo(inputID, inputName, imgSprite, movesArray, countID) {
     let movesUl = document.createElement("ul");
     let idUl = "movesUl" + countID;
     movesUl.setAttribute("id", idUl);
-    movesUl.innerHTML = "The moves for this pokemon ";
+    movesUl.innerHTML = "Abilities";
     // creat the moves in ul
     for (i = 0; i < 4; i++) {
         let moveLi = document.createElement("li");
@@ -78,9 +78,7 @@ function printInfo(inputID, inputName, imgSprite, movesArray, countID) {
     }
     elementsDiv.appendChild(movesUl);
 
-    // creat hr
-    let hr = document.createElement("hr");
-    elementsDiv.appendChild(hr);
+
     // add this div to the body
     elementsFatherDiv.appendChild(elementsDiv);
 }
