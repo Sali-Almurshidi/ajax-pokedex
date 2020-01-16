@@ -6,13 +6,12 @@ function getArray(userInput, countID) {
             return response.json();
         })
         .then((myJson) => {
+
             getInformation(myJson, countID);
-            console.log(myJson);
         });
 }
 // get information from  getArray function
-function getInformation(infoArray, countID) {
-    let pokemonArray = infoArray;
+function getInformation(pokemonArray, countID) {
     // let to get the pokemon id
     let inputID = pokemonArray.id;
     // let to get the pokemon name

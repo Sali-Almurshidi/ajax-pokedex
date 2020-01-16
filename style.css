@@ -1,0 +1,34 @@
+body{ background-size: cover;
+
+}
+
+#pokemonImg0, #pokemonImg1{
+
+    background-color: darkred;
+    border-radius: 50%;
+    padding: 5px;
+    width: 150px;
+    margin-left:570px;
+}
+
+#h2ID0{
+    text-align: center;
+    color: aquamarine;
+}
+#h2Name0{
+    text-align: center;
+    color: aquamarine;
+}
+#h2ID1{
+    text-align: center;
+    color: aquamarine;
+}
+#h2Name1{
+    text-align: center;
+    color: aquamarine;
+}
+#div0, #div1{
+    text-align: center;
+   color: aquamarine;
+}
+
