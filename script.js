@@ -10,7 +10,6 @@ function getArray(userInput, countID) {
             console.log(myJson);
         });
 }
-
 // get information from  getArray function
 function getInformation(infoArray, countID) {
     let pokemonArray = infoArray;
