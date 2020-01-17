@@ -38,41 +38,41 @@ function printInfo(inputID, inputName, imgSprite, movesArray, countID) {
 
     // create a new div element
     let elementsDiv = document.createElement("div");
-    let idDiv = "div" + countID;
-    elementsDiv.setAttribute("id", idDiv);
+  //  let idDiv = "div" + countID;
+    elementsDiv.setAttribute("class", "divStyle");
 
     //create a h2 for ID
     let pokemonID = document.createElement("h2");
-    let idID = "h2ID" + countID;
-    pokemonID.setAttribute("id", idID);
+   // let idID = "h2ID" + countID;
+    pokemonID.setAttribute("class", "nameStyle");
     pokemonID.innerHTML = "ID# " + inputID;
     elementsDiv.appendChild(pokemonID);
 
     // creat h2 for the name
     let pokemonName = document.createElement("h2");
-    let idName = "h2Name" + countID;
-    pokemonName.setAttribute("id", idName);
+  //  let idName = "h2Name" + countID;
+    pokemonName.setAttribute("class", "nameStyle");
     pokemonName.innerHTML = inputName;
     elementsDiv.appendChild(pokemonName);
 
     // creat img element
     let pokemonImg = document.createElement("img");
-    let idImg = "pokemonImg" + countID;
-    pokemonImg.setAttribute("id", idImg);
+  //  let idImg = "pokemonImg" + countID;
+    pokemonImg.setAttribute("class", "imageStyle");
     pokemonImg.src = imgSprite;
     console.log(imgSprite);
     elementsDiv.appendChild(pokemonImg);
 
     // creat element for the moves
     let movesUl = document.createElement("ul");
-    let idUl = "movesUl" + countID;
-    movesUl.setAttribute("id", idUl);
+    //let idUl = "movesUl" + countID;
+    //movesUl.setAttribute("id", idUl);
     movesUl.innerHTML = "Abilities";
     // creat the moves in ul
     for (i = 0; i < 4; i++) {
         let moveLi = document.createElement("li");
-        let idLi = "moveLi" + countID + i;
-        moveLi.setAttribute("id", idLi);
+        //let idLi = "moveLi" + countID + i;
+        //moveLi.setAttribute("id", idLi);
         moveLi.innerHTML = movesArray[i];
         movesUl.appendChild(moveLi);
     }
