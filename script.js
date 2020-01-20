@@ -1,4 +1,5 @@
-let elementsFatherDiv  = null;
+let elementsFatherDiv = null;
+
 // function to put the input from the user in fetch
 function getArray(userInput, countID) {
     fetch("https://pokeapi.co/api/v2/pokemon/" + userInput + "/")
@@ -10,6 +11,7 @@ function getArray(userInput, countID) {
             getInformation(myJson, countID);
         });
 }
+
 // get information from  getArray function
 function getInformation(pokemonArray, countID) {
     // let to get the pokemon id
@@ -37,49 +39,47 @@ function printInfo(inputID, inputName, imgSprite, movesArray, countID) {
 
     // create a new div element
     let elementsDiv = document.createElement("div");
-    let idDiv = "div" + countID;
-    elementsDiv.setAttribute("id", idDiv);
+    //  let idDiv = "div" + countID;
+    elementsDiv.setAttribute("class", "divStyle");
 
     //create a h2 for ID
     let pokemonID = document.createElement("h2");
-    let idID = "h2ID" + countID;
-    pokemonID.setAttribute("id", idID);
-    pokemonID.innerHTML = "Pokemon ID " + inputID;
+    // let idID = "h2ID" + countID;
+    pokemonID.setAttribute("class", "nameStyle");
+    pokemonID.innerHTML = "ID# " + inputID;
     elementsDiv.appendChild(pokemonID);
 
     // creat h2 for the name
     let pokemonName = document.createElement("h2");
-    let idName = "h2Name" + countID;
-    pokemonName.setAttribute("id", idName);
-    pokemonName.innerHTML = "Pokemon Name " + inputName;
+    //  let idName = "h2Name" + countID;
+    pokemonName.setAttribute("class", "nameStyle");
+    pokemonName.innerHTML = inputName;
     elementsDiv.appendChild(pokemonName);
 
     // creat img element
     let pokemonImg = document.createElement("img");
-    let idImg = "pokemonImg" + countID;
-    pokemonImg.setAttribute("id", idImg);
+    //  let idImg = "pokemonImg" + countID;
+    pokemonImg.setAttribute("class", "imageStyle");
     pokemonImg.src = imgSprite;
     console.log(imgSprite);
     elementsDiv.appendChild(pokemonImg);
 
     // creat element for the moves
     let movesUl = document.createElement("ul");
-    let idUl = "movesUl" + countID;
-    movesUl.setAttribute("id", idUl);
-    movesUl.innerHTML = "The moves for this pokemon ";
+    //let idUl = "movesUl" + countID;
+    //movesUl.setAttribute("id", idUl);
+    movesUl.innerHTML = "Abilities";
     // creat the moves in ul
     for (i = 0; i < 4; i++) {
         let moveLi = document.createElement("li");
-        let idLi = "moveLi" + countID + i;
-        moveLi.setAttribute("id", idLi);
+        //let idLi = "moveLi" + countID + i;
+        //moveLi.setAttribute("id", idLi);
         moveLi.innerHTML = movesArray[i];
         movesUl.appendChild(moveLi);
     }
     elementsDiv.appendChild(movesUl);
 
-    // creat hr
-    let hr = document.createElement("hr");
-    elementsDiv.appendChild(hr);
+
     // add this div to the body
     elementsFatherDiv.appendChild(elementsDiv);
 }
@@ -94,16 +94,21 @@ function sendURL(speciesURL, countID) {
             //console.log(mySecondJson.evolves_from_species.name);
             if (mySecondJson.evolves_from_species == null) {
                 console.log("done");
-                /*                // create a new div element
-                                let elementsDivForEnd = document.createElement("div");
-                                elementsDivForEnd.setAttribute("id", "divEnd");
+                // the index is the first evolution
+                if (countID == 0) {
+                    // create a new div element
+                    let elementsDivForEnd = document.createElement("div");
+                    elementsDivForEnd.setAttribute("class", "divStyle");
 
-                                //create a h2 for end
-                                let pokemonEnd = document.createElement("h2");
-                                pokemonEnd.innerHTML = "There is no e ";
-                                elementsDivForEnd.appendChild(pokemonEnd);
+                    //create a h2 for end
+                    let pokemonEnd = document.createElement("h3");
+                    pokemonEnd.setAttribute("class", "nameStyle");
+                    pokemonEnd.innerHTML = "This is the first evolution";
+                    elementsDivForEnd.appendChild(pokemonEnd);
 
-                                document.body.appendChild(elementsDivForEnd);*/
+                    elementsFatherDiv.appendChild(elementsDivForEnd);
+                }
+
                 countID = 0;
             } else {
                 countID++;
@@ -129,7 +134,7 @@ function addFatherDiv() {
 
 // function to remove the father div
 function removeElement() {
-    if (elementsFatherDiv != null){
+    if (elementsFatherDiv != null) {
         let element = document.getElementById("fatherDiv");
         element.parentNode.removeChild(element);
     }
